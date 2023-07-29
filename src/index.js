@@ -1,13 +1,33 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+// Redux
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+const theme = extendTheme({
+  colors: {
+    brand: {
+      100: "#f06292",
+      200: "#ba68c8",
+      300: "#ffd54f",
+      400: "#4fc3f7",
+      500: "#aed581",
+    },
+  },
+});
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <ChakraProvider theme={theme}>
+        <App />
+      </ChakraProvider>
+    </Provider>
   </React.StrictMode>
 );
 

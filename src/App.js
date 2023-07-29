@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+// chakra-ui
+import { Grid } from "@chakra-ui/react";
+// components
+import Header from "./components/Header";
+import Form from "./components/Form";
+import NoteList from "./components/NoteList";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Grid pt={3} justifyContent="center">
+        <Header />
+        <Form />
+        <NoteList />
+      </Grid>
     </div>
   );
 }
